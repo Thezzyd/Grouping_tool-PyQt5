@@ -6,7 +6,7 @@ Narzędzie zostało wykonane na potrzeby przeprowadzenia badania porównującego
 ## Założenia funkcjonalne
 Przy projektowaniu aplikacji bardzo ważnym elementem jest określenie potrzeb funkcjonalnych, jakie tworzone oprogramowanie ma realizować. Przedstawione funkcjonalności za pomocą diagramu przypadków użycia ułatwia zobrazowanie możliwości, jakie użytkownik korzystający z narzędzia będzie posiadał. Diagram przedstawiony został na Rysunku poniżej (Rysunek 1).
 
-![use_case_diagram](./Diagramy_UML/Use_case_pl.png)
+![use_case_diagram](./Diagramy_UML/Use_case_pl.png)  
 **Rysunek 1. Diagram UML przedstawiający funkcjonalności tworzonego narzędzia.**
 
 Planowane funkcjonalności tworzonego programu:
@@ -31,7 +31,7 @@ Planowane funkcjonalności tworzonego programu:
 ## Struktura programu
 Tworzone narzędzie od strony kodu będzie się składało z czterech modułów, pierwszy skupiający w sobie integrację GUI z poszczególnymi metodami grupowania oraz zarządzanie poszczególnymi elementami składającymi się na GUI. Następne trzy będą stanowić kolejno przygotowane gotowe metody grupowania tj. metoda gęstościowa DBSCAN, metoda KMeans i metoda hierarchiczna. Poniżej znajduje się diagram klas opisujący zastosowaną strukturę (Rysunek 2).
 
-![class_diagram](./Diagramy_UML/Class_diagram.png)
+![class_diagram](./Diagramy_UML/Class_diagram.png)  
 **Rysunek 2. Diagram UML przedstawiający strukturę tworzonego narzędzia.**  
   
 ### Zadania poszczególnych metod:  
@@ -67,7 +67,7 @@ Tworzone narzędzie od strony kodu będzie się składało z czterech modułów,
 ## Przepływ aktywności
 Kolejną ważną czynnością, jaką możemy wykonać przy projektowaniu narzędzia jest przemyślenie i zamodelowanie przepływu czynności tworzonej aplikacji. Możemy go przedstawić za pomocą graficznego diagramu (Rysunek 3). Służy on głównie do modelowania dynamicznych aspektów systemu oraz do przedstawienia sekwencji kroków-czynności, które są wykonywane w celu przeprowadzenia pewnej akcji od początku do końca.
 
-![activity_diagram](./Diagramy_UML/Activity_diagram.png)
+![activity_diagram](./Diagramy_UML/Activity_diagram.png)  
 **Rysunek 3. Diagram UML przedstawiający przepływ aktywności.**  
 
 Przedstawiony diagram powyżej opisuje krok po kroku, jakie czynności muszą zostać wykonane aby przeprowadzić użytkownika od momentu uruchomienia narzędzia do wygenerowania wyników grupowania z ewentualnym ich zapisem do zewnętrznego pliku. Pierwszą czynnością po uruchomieniu programu będzie wczytanie wybranego pliku CSV z danymi przez użytkownika. Po wczytaniu danych będzie możliwość podglądu w tabelarycznym widoku jak te dane się prezentują, jakie mają atrybuty/kolumny itp. Gdy dane zostaną załadowane, odblokowane zostaną zakładki z poszczególnymi metodami grupowania, na tym etapie wybieramy jedną z dostępnych i uzupełniamy puste pola dotyczące wymaganych parametrów jakie użytkownik musi zdefiniować. Po podaniu wszystkich parametrów w poprawnej formie (gdy nie podamy parametrów wejściowych zostaną wypełnione wartościami domyślnymi) możemy uruchomić proces grupowania. Jeśli jakieś z podanych wartości będą niepoprawne pojawi się odpowiedni komunikat. Gdy proces grupowania dobiegnie końca ukazane zostaną wyniki, które będziemy mogli wyeksportować do pliku JSON i będziemy mogli dokonać podglądu wyników na wykresie. W każdej chwili możemy zmieniać zakładki z metodami i testować każdą z nich porównując jak dana metoda pogrupowała te same dane. W zakładce „Wyniki” mamy możliwość porównania wszystkich trzech metod wraz z opcją porównania poszczególnych klastrów pomiędzy wykorzystanymi metodami, możemy w taki sposób poznać, jaka jest ich część wspólna oraz jakie obiekty są poza częścią wspólną. Wygenerowane rezultaty porównania można zobaczyć na wizualizacji opcjonalnie dodać do zapisu lub porzucić. Przechodząc w zakładkę „Wczytaj dane” będziemy mieli możliwość wczytania wcześniej wygenerowanych plików z wynikami w formacie JSON. Po wczytaniu plików będziemy mogli wygenerować wykres prezentujący wydajność poszczególnych metod grupowania.
